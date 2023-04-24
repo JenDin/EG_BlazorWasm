@@ -24,5 +24,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
+    <Folder Include="Pages\IndividualProducts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Pages\IndividualProducts\" />
   </ItemGroup>
 </Project>

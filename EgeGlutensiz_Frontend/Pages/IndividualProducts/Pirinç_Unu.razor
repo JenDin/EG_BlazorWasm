@@ -1,0 +1,79 @@
+﻿@page "/pirinç_unu"
+
+<PageTitle>Pirinç Unu</PageTitle>
+
+<nav class="flex w-92 ml-4 mt-8" aria-label="breadcrumb">
+    <ul class="inline-flex items-center space-x-1 md:space-x-3">
+        <li class="inline-flex items-center">
+            <a href="/" class="inline-flex items-center text-sm font-medium text-black hover:underline">
+                <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                <NavLink href="/" Match="NavLinkMatch.All">Ev</NavLink>
+            </a>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg aria-hidden="true" class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="ml-1 text-sm font-bold text-black md:ml-2 hover:underline"><NavLink href="/ürünler" Match="NavLinkMatch.All">Ürünler</NavLink></span>
+            </div>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg aria-hidden="true" class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="ml-1 text-sm font-bold text-black md:ml-2 hover:underline"><NavLink href="/pirinç_unu" Match="NavLinkMatch.All">Pirinç Unu</NavLink></span>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<section class="mb-40 w-[90%] lg:w-full max-w-[1000px] mx-auto">
+    <h1 class="text-4xl lg:text-5xl font-extrabold text-center mt-3 mb-8">Pirinç Unu</h1>
+
+    <div class="p-4 md:flex md:justify-content">
+        <div class="md:w-1/2 flex justify-center items-center">
+            <picture>
+                <source type="image/webp" srcset="images/test2.webp">
+                <img src="images/test2.png" alt="" class="h-[400px] mb-8 lg:mb-0 lg:h-[450px] flex justify-center items-center" />
+            </picture>
+        </div>
+        <div class="md:w-1/2 md:mt-12">
+            <h2 class="text-xl font-bold mb-1.5">Açıklama</h2>
+            <p class="mb-6">
+                İster tatlı, ister tuzlu olsun tüm tariflerde kullanabileceğiniz Ege Glutensiz Un Karışımı ile birbirinden güzel tatlar yakalayacak, sevdiklerinize ve kendinize lezzet dolu anlar yaşatacaksınız! Ege Glutensiz Un Karışımı tüm tarifleriniz için uygundur.
+            </p>
+            <h2 class="text-xl font-bold mb-1.5">İçindekiler</h2>
+            <p class="mb-7">Mısır nişastası, patates nişastası, pirinç unu, tapyoka nişastası, sebze proteini, soya unu, kıvam arttırıcı (hidroksipropil metil selüloz), bitkisel lif, emülgatör (mono ve digliseridlerin diasetil tartarik asit esterleri), antioksidan (askorbik asit).</p>
+
+            <!-- Nutritional table -->
+            <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8 overflow-hidden">
+                    <table class="min-w-full text-left text-sm font-light">
+                        <thead class="border-b font-medium dark:border-neutral-500 bg-gray-300">
+                            <tr>
+                                <th scope="col" class="px-4 py-2">Enerji ve Besin Öğeleri</th>
+                                <th scope="col" class="px-4 py-2 text-end">(100 gr. 'da)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b hover:bg-gray-100">
+                                <td class="px-4 py-2">Enerji (Kj/Kcal)</td>
+                                <td class="px-4 py-2 text-end">499 / 119</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-100">
+                                <td class="px-4 py-2">Yağ (g)</td>
+                                <td class="px-4 py-2 text-end">3,5</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-100">
+                                <td class="px-4 py-2">Karbonhidrat (g)</td>
+                                <td class="px-4 py-2 text-end">19</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-100">
+                                <td class="px-4 py-2">Protein (g)</td>
+                                <td class="px-4 py-2 text-end">3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

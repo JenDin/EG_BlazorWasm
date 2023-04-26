@@ -1,0 +1,66 @@
+﻿@page "/ekmek_tarifleri"
+
+<PageTitle>Ekmek tarifleri</PageTitle>
+
+<nav class="flex w-92 ml-4 mt-8" aria-label="breadcrumb">
+    <ul class="inline-flex items-center space-x-1 md:space-x-3">
+        <li class="inline-flex items-center">
+            <a href="/" class="inline-flex items-center text-sm font-medium text-black hover:underline">
+                <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                <span><NavLink href="/" Match="NavLinkMatch.All">Ev</NavLink></span>
+            </a>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg aria-hidden="true" class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="ml-1 text-sm font-bold text-black md:ml-2 hover:underline"><NavLink href="/tarifler" Match="NavLinkMatch.All">Tarifler</NavLink></span>
+            </div>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg aria-hidden="true" class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="ml-1 text-sm font-bold text-black md:ml-2 hover:underline"><NavLink href="/ekmek_tarifleri" Match="NavLinkMatch.All">Ekmek tarifleri</NavLink></span>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<section class="mb-40">
+    <h1 class="text-4xl lg:text-5xl font-extrabold text-center mt-3 mb-20">Ekmek tarifleri</h1>
+
+    <!-- Cards container -->
+    <div class="mb-[5rem] flex md:justify-center gap-6 p-4 w-[450px] flex-wrap md:w-[700px] lg:w-[90%] max-w-[1200px] mx-auto">
+        <!--1-->
+        <div class="max-w-xs">
+            <picture>
+                <source type="image/webp" srcset="images/bread.webp">
+                <img src="images/test2.png" alt="" class="hover:opacity-75 rounded-t-lg" />
+            </picture>
+            <div class="block max-w-sm p-4 bg-sky-100 rounded-b-lg">
+                <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Glutensiz ekmek</h2>
+                <p class="mb-1"><span class="font-semibold">Toplam Süre:</span> 60-70 dk</p>
+                <p class="mb-1"><span class="font-semibold">Porsiyon:</span> 4</p>
+                <a href="#" class="inline-flex items-center mt-4 px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-t-lg rounded-bl-lg">
+                    Read more
+                    <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+        </div>
+        <!--2-->
+        <div class="max-w-xs">
+            <picture>
+                <source type="image/webp" srcset="images/bread.webp">
+                <img src="images/test2.png" alt="" class="hover:opacity-75 rounded-t-lg" />
+            </picture>
+            <div class="block max-w-sm p-4 bg-sky-100 rounded-b-lg">
+                <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Glutensiz ekmek</h2>
+                <p class="mb-1"><span class="font-semibold">Toplam Süre:</span> 60-70 dk</p>
+                <p class="mb-1"><span class="font-semibold">Porsiyon:</span> 4</p>
+                <a href="#" class="inline-flex items-center mt-4 px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-t-lg rounded-bl-lg">
+                    Read more
+                    <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

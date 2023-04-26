@@ -25,8 +25,16 @@
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
     <Folder Include="Pages\IndividualProducts\" />
+    <Folder Include="Pages\AllRecipes\Bread\" />
+    <Folder Include="Pages\AllRecipes\Cakes\" />
+    <Folder Include="Pages\AllRecipes\Snacks\" />
+    <Folder Include="Pages\AllRecipes\Dessert\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Pages\IndividualProducts\" />
+    <None Remove="Pages\Recipes\Bread\" />
+    <None Remove="Pages\Recipes\Cakes\" />
+    <None Remove="Pages\Recipes\Snacks\" />
+    <None Remove="Pages\Recipes\Dessert\" />
   </ItemGroup>
 </Project>

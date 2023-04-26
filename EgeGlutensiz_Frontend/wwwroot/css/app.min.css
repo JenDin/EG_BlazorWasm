@@ -681,8 +681,8 @@ video {
 .w-6 {
   width: 1.5rem;
 }
-.w-\[300px\] {
-  width: 300px;
+.w-\[240px\] {
+  width: 240px;
 }
 .w-\[400px\] {
   width: 400px;
@@ -713,9 +713,6 @@ video {
 }
 .max-w-\[1200px\] {
   max-width: 1200px;
-}
-.max-w-\[1250px\] {
-  max-width: 1250px;
 }
 .max-w-\[1500px\] {
   max-width: 1500px;
@@ -1237,6 +1234,10 @@ body {
     margin-bottom: 0px;
   }
 
+  .lg\:mb-20 {
+    margin-bottom: 5rem;
+  }
+
   .lg\:h-\[450px\] {
     height: 450px;
   }
@@ -1261,6 +1262,10 @@ body {
 }
 
 @media (min-width: 1280px) {
+
+  .xl\:max-w-\[1000px\] {
+    max-width: 1000px;
+  }
 
   .xl\:justify-start {
     justify-content: flex-start;

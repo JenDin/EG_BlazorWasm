@@ -1269,8 +1269,8 @@ body {
     width: 50%;
   }
 
-  .\32xl\:max-w-none {
-    max-width: none;
+  .\32xl\:max-w-\[1500px\] {
+    max-width: 1500px;
   }
 
   .\32xl\:text-5xl {

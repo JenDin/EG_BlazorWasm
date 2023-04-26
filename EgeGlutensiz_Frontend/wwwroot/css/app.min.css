@@ -720,6 +720,9 @@ video {
 .max-w-\[1500px\] {
   max-width: 1500px;
 }
+.max-w-\[300px\] {
+  max-width: 300px;
+}
 .max-w-\[450px\] {
   max-width: 450px;
 }

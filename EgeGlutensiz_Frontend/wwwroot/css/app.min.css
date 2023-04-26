@@ -717,6 +717,9 @@ video {
 .max-w-\[1250px\] {
   max-width: 1250px;
 }
+.max-w-\[1500px\] {
+  max-width: 1500px;
+}
 .max-w-\[450px\] {
   max-width: 450px;
 }
@@ -988,6 +991,11 @@ body {
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-yellow-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 224 71 / var(--tw-bg-opacity));
 }
 
 .hover\:text-\[\#457b9d\]:hover {

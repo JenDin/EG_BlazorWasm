@@ -1,0 +1,75 @@
+﻿@page "/sütlaç"
+
+<PageTitle>Sütlaç</PageTitle>
+
+<nav class="flex w-92 ml-4 mt-8" aria-label="breadcrumb">
+    <ul class="inline-flex items-center space-x-1 md:space-x-3">
+        <li class="inline-flex items-center">
+            <a href="/" class="inline-flex items-center text-sm font-medium text-black hover:underline">
+                <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                <span><NavLink href="/" Match="NavLinkMatch.All">Ev</NavLink></span>
+            </a>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg aria-hidden="true" class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="ml-1 text-sm font-medium text-black md:ml-2 hover:underline"><NavLink href="/tarifler" Match="NavLinkMatch.All">Tarifler</NavLink></span>
+            </div>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg aria-hidden="true" class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="ml-1 text-sm font-medium text-black md:ml-2 hover:underline"><NavLink href="/atıştırmalık_tarifleri" Match="NavLinkMatch.All">Atıştırmalık tarifleri</NavLink></span>
+            </div>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg aria-hidden="true" class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                <span class="ml-1 text-sm font-bold text-black md:ml-2 hover:underline"><NavLink href="/sütlaç" Match="NavLinkMatch.All">Sütlaç</NavLink></span>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<section class="mt-16 mb-40">
+    <!-- Image, title and details -->
+    <div class="bg-pink-100 lg:flex justify-center w-[90%] max-w-[800px] lg:max-w-[1200px] mx-auto rounded-tr-lg rounded-br-lg">
+        <div class="lg:w-1/2">
+            <img class="w-full h-full rounded-tl-lg rounded-bl-lg" src="/images/bread.webp" alt="İstanbul'daki Galata Kulesi'nin mavi gökyüzü ile görünümü" />
+        </div>
+        <div class="lg:w-1/2 p-8">
+            <div class="lg:pl-4">
+                <h1 class="text-4xl lg:text-5xl font-extrabold mt-3 mb-4">Sütlaç</h1>
+                <p class="mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h2 class="text-xl lg: text-3xl font-bold mb-2">Genel Bakış</h2>
+                <p class="mb-2"><span class="font-bold">Toplam Süre: </span>30-35 dakika</p>
+                <p class="mb-2"><span class="font-bold">Pişirme Süresi: </span>20 dakika</p>
+                <p class="mb-2"><span class="font-bold">Zorluk Derecesi: </span>Kolay</p>
+                <p class="mb-2"><span class="font-bold">Porsiyon: </span>4</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ingredients and method -->
+    <div class="lg:flex justify-center w-[90%] max-w-[800px] lg:max-w-[1200px] mx-auto mt-10 gap-4">
+        <div class="lg:w-4/12 mb-6">
+            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Gerekli Malzemeler</h2>
+            <p class="bg-white rounded-lg mb-1 p-3 max-w-[400px]">1 Lt Süt</p>
+            <p class="bg-white rounded-lg mb-1 p-3 max-w-[400px]">1 Lt Süt</p>
+            <p class="bg-white rounded-lg mb-1 p-3 max-w-[400px]">1 Lt Süt</p>
+            <p class="bg-white rounded-lg mb-1 p-3 max-w-[400px]">1 Lt Süt</p>
+            <p class="bg-white rounded-lg mb-1 p-3 max-w-[400px]">1 Lt Süt</p>
+            <p class="bg-white rounded-lg mb-1 p-3 max-w-[400px]">1 Lt Süt</p>
+        </div>
+        <div class="lg:w-8/12 mb-6">
+            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Yapılışı</h2>
+            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">1.</span> Öncelikle pirinci yıkayıp su ile ateşe koyun</p>
+            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">2.</span> Pirinçler uzayıp suyu çekene kadar kaynatın, soğuk sütü ekleyin</p>
+            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">3.</span> 1-2 defa karıştırıp, kaynamasını bekleyin</p>
+            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">4.</span> Bu arada bir kasede pirinç ununu 1 su bardağı soğuk süt ile ezin. Tencerede kaynamakta olan sütten 1-2 kepçe alıp kaseye ekleyin. (pirinç unu ılınmış olmalı)</p>
+            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">5.</span> Pirinç ununu tencereye ekleyin, ara sıra karıştırarak 10 dakika kadar pişirin</p>
+            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">6.</span> Toz şekeri ilave edip karıştırın ve 1-2 taşım kaynatın</p>
+            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">7.</span> Sütlacı kaselere paylaştırın. Soğuyunca sütlaçların üzerlerine tarçın serperek servis edebilirsiniz</p>
+        </div>
+    </div>
+</section>

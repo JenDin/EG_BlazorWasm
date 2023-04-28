@@ -17,6 +17,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.0" PrivateAssets="all" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +30,7 @@
     <Folder Include="Pages\AllRecipes\Cakes\" />
     <Folder Include="Pages\AllRecipes\Snacks\" />
     <Folder Include="Pages\AllRecipes\Dessert\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Pages\IndividualProducts\" />
@@ -36,5 +38,7 @@
     <None Remove="Pages\Recipes\Cakes\" />
     <None Remove="Pages\Recipes\Snacks\" />
     <None Remove="Pages\Recipes\Dessert\" />
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Models\" />
   </ItemGroup>
 </Project>

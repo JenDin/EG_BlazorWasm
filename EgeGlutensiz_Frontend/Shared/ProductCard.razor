@@ -1,0 +1,21 @@
+﻿@using EgeGlutensiz_Frontend.Models;
+
+<article class="w-[240px] text-center mx-auto md:mx-0 mb-10">
+    <a href="/kakaolu_kinoalı_puding" class="hover:opacity-75">
+        <img src="@GetImgUrl()" alt="" class="h-[280px] mx-auto pb-4" />
+    </a>
+    <h2 class="text-lg font-bold">@product.title</h2>
+</article>
+
+@code {
+    [Parameter]
+    public ProductPageModel.Root product { get; set; }
+
+    string baseUrl = "http://localhost:20990/";
+
+    public string GetImgUrl()
+    {
+        var cleanUrl = product.productRegion.productImage.media.publicUrl.Replace("~", "");
+        return $"{baseUrl}{cleanUrl}";
+    }
+}

@@ -1,7 +1,10 @@
 ﻿@using EgeGlutensiz_Frontend.Models;
+@inject NavigationManager UriHelper
+
 
 <article class="w-[240px] text-center mx-auto md:mx-0 mb-10">
-    <a href="/kakaolu_kinoalı_puding" class="hover:opacity-75">
+    <a href="ürünler/@product.permalink" class="hover:opacity-75">
+        <p><a @onclick="async () => await GoToPage(product.slug)">@product.slug</a></p>
         <img src="@GetImgUrl()" alt="" class="h-[280px] mx-auto pb-4" />
     </a>
     <h2 class="text-lg font-bold">@product.title</h2>
@@ -11,11 +14,19 @@
     [Parameter]
     public ProductPageModel.Root product { get; set; }
 
-    string baseUrl = "http://localhost:20990/";
+    string baseUrl = "http://localhost:20990";
 
     public string GetImgUrl()
     {
         var cleanUrl = product.productRegion.productImage.media.publicUrl.Replace("~", "");
         return $"{baseUrl}{cleanUrl}";
     }
+
+    async Task GoToPage(string slug)
+    {
+        UriHelper.NavigateTo($"/{slug}");
+
+    }
+
+
 }

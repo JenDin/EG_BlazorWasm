@@ -4,7 +4,7 @@
 @inject NavigationManager navigationManager
 @inject HttpClient Http
 
-<PageTitle>Çilekli Kinoalı Puding</PageTitle>
+<PageTitle>@ChangeSlugApperance()</PageTitle>
 
 <nav class="flex w-92 ml-4 mt-8" aria-label="breadcrumb">
     <ul class="inline-flex items-center space-x-1 md:space-x-3">
@@ -17,13 +17,13 @@
         <li aria-current="page">
             <div class="flex items-center">
                 <svg aria-hidden="true" class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                <span class="ml-1 text-sm font-medium text-black md:ml-2 hover:underline"><NavLink href="/ürünler" Match="NavLinkMatch.All">ürünler</NavLink></span>
+                <span class="ml-1 text-sm font-medium text-black md:ml-2 hover:underline"><NavLink href="/ürünler" Match="NavLinkMatch.All">Ürünler</NavLink></span>
             </div>
         </li>
         <li aria-current="page">
             <div class="flex items-center">
                 <svg aria-hidden="true" class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                <span class="ml-1 text-sm font-bold text-black md:ml-2 hover:underline"><NavLink href="@slug" Match="NavLinkMatch.All">@slug</NavLink></span>
+                <span class="ml-1 text-sm font-bold text-black md:ml-2">@ChangeSlugApperance()</span>
             </div>
         </li>
     </ul>
@@ -63,62 +63,93 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="border-b hover:bg-gray-100">
-                                    <td class="px-4 py-2">Enerji (Kj/Kcal)</td>
-                                    @if (productPageModel != null)
-                                    {
-                                        <td class="px-4 py-2 text-end">@productPageModel.productRegion.energy.value</td>
-                                    }
-                                </tr>
-                                <tr class="border-b hover:bg-gray-100">
-                                    <td class="px-4 py-2">Yağ (g)</td>
-                                    @if (productPageModel != null)
-                                    {
-                                        <td class="px-4 py-2 text-end">@productPageModel.productRegion.fat.value</td>
-                                    }
-                                </tr>
-                                <tr class="border-b hover:bg-gray-100">
-                                    <td class="px-4 py-2">Doymuş yağ (g)</td>
-                                    @if (productPageModel != null)
-                                    {
-                                        <td class="px-4 py-2 text-end">@productPageModel.productRegion.saturatedFat.value</td>
-                                    }
-                                </tr>
-                                <tr class="border-b hover:bg-gray-100">
-                                    <td class="px-4 py-2">Karbonhidrat (g)</td>
-                                    @if (productPageModel != null)
-                                    {
-                                        <td class="px-4 py-2 text-end">@productPageModel.productRegion.carbohydrates.value</td>
-                                    }
-                                </tr>
-                                <tr class="border-b hover:bg-gray-100">
-                                    <td class="px-4 py-2">Protein (g)</td>
-                                    @if (productPageModel != null)
-                                    {
-                                        <td class="px-4 py-2 text-end">@productPageModel.productRegion.protein.value</td>
-                                    }
-                                </tr>
-                                <tr class="border-b hover:bg-gray-100">
-                                    <td class="px-4 py-2">Diyet Lifi (g)</td>
-                                    @if (productPageModel != null)
-                                    {
-                                        <td class="px-4 py-2 text-end">@productPageModel.productRegion.fibers.value</td>
-                                    }
-                                </tr>
-                                <tr class="border-b hover:bg-gray-100">
-                                    <td class="px-4 py-2">Şekerler (g)</td>
-                                    @if (productPageModel != null)
-                                    {
-                                        <td class="px-4 py-2 text-end">@productPageModel.productRegion.sugar.value</td>
-                                    }
-                                </tr>
-                                <tr class="border-b hover:bg-gray-100">
-                                    <td class="px-4 py-2">Tuz(g)</td>
-                                    @if (productPageModel != null)
-                                    {
-                                        <td class="px-4 py-2 text-end">@productPageModel.productRegion.salt.value</td>
-                                    }
-                                </tr>
+                                @if (productPageModel.productRegion.energy.value != null)
+                                {
+                                    <tr class="border-b hover:bg-gray-100">
+                                        <td class="px-4 py-2">Enerji (Kj/Kcal)</td>
+                                        @if (productPageModel != null)
+                                        {
+                                            <td class="px-4 py-2 text-end">@productPageModel.productRegion.energy.value</td>
+                                        }
+                                    </tr>
+                                }
+
+                                @if (productPageModel.productRegion.fat.value != null)
+                                {
+                                    <tr class="border-b hover:bg-gray-100">
+                                        <td class="px-4 py-2">Yağ (g)</td>
+                                        @if (productPageModel != null)
+                                        {
+                                            <td class="px-4 py-2 text-end">@productPageModel.productRegion.fat.value</td>
+                                        }
+
+                                    </tr>
+                                }
+
+                                @if (productPageModel.productRegion.saturatedFat.value != null)
+                                {
+                                    <tr class="border-b hover:bg-gray-100">
+                                        <td class="px-4 py-2">Doymuş yağ (g)</td>
+                                        @if (productPageModel != null)
+                                        {
+                                            <td class="px-4 py-2 text-end">@productPageModel.productRegion.saturatedFat.value</td>
+                                        }
+                                    </tr>
+                                }
+
+                                @if (productPageModel.productRegion.saturatedFat.value != null)
+                                {
+                                    <tr class="border-b hover:bg-gray-100">
+                                        <td class="px-4 py-2">Karbonhidrat (g)</td>
+                                        @if (productPageModel != null)
+                                        {
+                                            <td class="px-4 py-2 text-end">@productPageModel.productRegion.carbohydrates.value</td>
+                                        }
+                                    </tr>
+                                }
+                                @if (productPageModel.productRegion.protein.value != null)
+                                {
+                                    <tr class="border-b hover:bg-gray-100">
+                                        <td class="px-4 py-2">Protein (g)</td>
+                                        @if (productPageModel != null)
+                                        {
+                                            <td class="px-4 py-2 text-end">@productPageModel.productRegion.protein.value</td>
+                                        }
+                                    </tr>
+                                }
+
+                                @if (productPageModel.productRegion.fibers.value != null)
+                                {
+                                    <tr class="border-b hover:bg-gray-100">
+                                        <td class="px-4 py-2">Diyet Lifi (g)</td>
+                                        @if (productPageModel != null)
+                                        {
+                                            <td class="px-4 py-2 text-end">@productPageModel.productRegion.fibers.value</td>
+                                        }
+                                    </tr>
+                                }
+
+                                @if (productPageModel.productRegion.sugar.value != null)
+                                {
+                                    <tr class="border-b hover:bg-gray-100">
+                                        <td class="px-4 py-2">Şekerler (g)</td>
+                                        @if (productPageModel != null)
+                                        {
+                                            <td class="px-4 py-2 text-end">@productPageModel.productRegion.sugar.value</td>
+                                        }
+                                    </tr>
+                                }
+
+                                @if (productPageModel.productRegion.salt.value != null)
+                                {
+                                    <tr class="border-b hover:bg-gray-100">
+                                        <td class="px-4 py-2">Tuz(g)</td>
+                                        @if (productPageModel != null)
+                                        {
+                                            <td class="px-4 py-2 text-end">@productPageModel.productRegion.salt.value</td>
+                                        }
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>
@@ -170,6 +201,18 @@
 
     public string GetProductUrl()
     {
-        return $"ürünler/{slug}";
+        return $"/ürünler/{slug}";
+    }
+
+    public string ChangeSlugApperance()
+    {
+        slug = slug.Replace("-", " ");
+
+        if (slug.Length > 1)
+        {
+            return char.ToUpper(slug[0]) + slug.Substring(1);
+        }
+
+        return slug;
     }
 }   

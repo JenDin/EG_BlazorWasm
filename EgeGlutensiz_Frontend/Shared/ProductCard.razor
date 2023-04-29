@@ -15,6 +15,7 @@
 
     string baseUrl = "http://localhost:20990";
 
+    // Clean the image URL
     public string GetImgUrl()
     {
         var cleanUrl = product.productRegion.productImage.media.publicUrl.Replace("~", "");

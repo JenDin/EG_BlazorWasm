@@ -4,7 +4,6 @@
 
 <article class="w-[240px] text-center mx-auto md:mx-0 mb-10">
     <a href="ürünler/@product.permalink" class="hover:opacity-75">
-        <p><a @onclick="async () => await GoToPage(product.slug)">@product.slug</a></p>
         <img src="@GetImgUrl()" alt="" class="h-[280px] mx-auto pb-4" />
     </a>
     <h2 class="text-lg font-bold">@product.title</h2>

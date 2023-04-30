@@ -161,6 +161,7 @@
 
 @code {
 
+    // Skapa en property för att kunna spara sluggen
     [Parameter]
     public string slug { get; set; }
     ProductPageModel.Root productPageModel;
@@ -177,6 +178,7 @@
         return productPage;
     }
 
+    // Texten ändrades inte för att det är en SPA 
     protected override async Task OnParametersSetAsync()
     {
         productPageModel = await GetPage();
@@ -184,11 +186,11 @@
 
     }
 
-    protected override async Task OnInitializedAsync()
-    {
-        productPageModel = await GetPage();
-        ImageUrl = GetImgUrl();
-    }
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    productPageModel = await GetPage();
+    //    ImageUrl = GetImgUrl();
+    //}
 
     // Base URL
     string baseUrl = "http://localhost:20990/";
@@ -199,11 +201,7 @@
         return $"{baseUrl}{cleanUrl}";
     }
 
-    public string GetProductUrl()
-    {
-        return $"/ürünler/{slug}";
-    }
-
+    // 
     public string ChangeSlugApperance()
     {
         slug = slug.Replace("-", " ");

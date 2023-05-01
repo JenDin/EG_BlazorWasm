@@ -27,17 +27,22 @@
 
     <!-- Cards container -->
     <div class="mb-[5rem] flex justify-center gap-6 w-[450px] flex-wrap md:w-[700px] lg:w-[90%] max-w-[1500px] mx-auto">
-        @foreach (var recipeCategory in recipeCategories)
+        @if (recipeCategories != null && recipeCategories.Any())
         {
-            <CategoryCard recipeCategory="@recipeCategory" />
+
+            @foreach (var recipeCategory in recipeCategories)
+            {
+                <CategoryCard recipeCategory="@recipeCategory" />
+            }
         }
+
     </div>
 </section>
 
 @code {
 
     // Store t of all recipe categories
-    List<RecipeCategoryModel.Root> recipeCategories;
+    List<RecipeCategoryModel.Root> recipeCategories = new List<RecipeCategoryModel.Root>();
 
     // Fetch the recipe categories
     public async Task<List<RecipeCategoryModel.Root>> GetRecipeCategories()
@@ -49,4 +54,5 @@
     {
         recipeCategories = await GetRecipeCategories();
     }
+
 }

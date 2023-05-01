@@ -1,4 +1,6 @@
-﻿@page "/recipesInCategory"
+﻿@using EgeGlutensiz_Frontend.Models
+@page "/tarifler/{slug}"
+@inject HttpClient Http
 
 <PageTitle>Tatlı tarifleri</PageTitle>
 
@@ -30,6 +32,47 @@
 
     <!-- Cards container -->
     <div class="mb-[5rem] flex justify-center gap-6 p-4 w-[450px] flex-wrap md:w-[700px] lg:w-[90%] max-w-[1200px] mx-auto">
-        <RecipeCategoryCard/>
+        @if (recipesInCategory != null)
+        {
+
+            @foreach (var recipe in recipesInCategory)
+            {
+                <RecipeCategoryCard recipe="@recipe"></RecipeCategoryCard>
+
+            }
+        }
+
     </div>
 </section>
+
+@code {
+    List<RecipeModel.Root> recipesInCategory = new List<RecipeModel.Root>();
+
+    // Skapa en property för att kunna spara sluggen
+    [Parameter]
+    public string slug { get; set; }
+
+    // Get all recipes belonging to a specific category
+    public async Task<List<RecipeModel.Root>> GetAllRecipesInCategory()
+    {
+
+        var recipes =  await Http.GetFromJsonAsync<List<RecipeModel.Root>>($"http://localhost:20990/api/recipes_category/{slug}");
+        return recipes != null ? recipes : new List<RecipeModel.Root>();
+    }
+
+    public bool shouldRender = false;
+    protected override bool ShouldRender() => shouldRender;
+
+    protected override async Task OnInitializedAsync()
+    {
+        recipesInCategory = await GetAllRecipesInCategory();
+        shouldRender = true;
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        recipesInCategory = await GetAllRecipesInCategory();
+        shouldRender = true;
+
+    }
+}

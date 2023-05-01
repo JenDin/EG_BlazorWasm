@@ -2,8 +2,8 @@
 @inject NavigationManager UriHelper
 
 <div class="max-w-[300px]">
-    <a href="/recipesInCategory">
-        <img src="@GetImgUrl()" alt="" class="hover:opacity-75 rounded-t-lg" />
+        <a href="tarifler/@recipeCategory.permalink"
+    <img src="@GetImgUrl()" alt="" class="hover:opacity-75 rounded-t-lg" />
         <div class="block max-w-sm p-4 bg-sky-100 rounded-b-lg hover:bg-yellow-300">
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center">@recipeCategory.title</h2>
         </div>
@@ -26,9 +26,8 @@
     }
 
     // Skicka sluggen till product details
-    async Task GoToPage(string slug)
+    async Task GoToPage()
     {
-        UriHelper.NavigateTo($"/{slug}");
-
+        UriHelper.NavigateTo($"/{recipeCategory.permalink}");
     }
 }

@@ -24,13 +24,13 @@
         <li>
             <div class="flex items-center">
                 <svg aria-hidden="true" class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                <span class="ml-1 text-sm font-medium text-black md:ml-2 hover:underline"><NavLink href="/tatlı_tarifleri" Match="NavLinkMatch.All">Tatlı tarifleri</NavLink></span>
+                <span class="ml-1 text-sm font-medium text-black md:ml-2 hover:underline"><a href="tarifler/@category">@ChangeSlugApperance()</a></span>
             </div>
         </li>
         <li aria-current="page">
             <div class="flex items-center">
                 <svg aria-hidden="true" class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                <span class="ml-1 text-sm font-bold text-black md:ml-2">Details</span>
+                <span class="ml-1 text-sm font-bold text-black md:ml-2">@recipeDetails.recipeRegion.title.value</span>
             </div>
         </li>
     </ul>
@@ -47,7 +47,7 @@
         </div>
         <div class="lg:w-1/2 p-8">
             <div class="lg:pl-4">
-                <h1 class="text-4xl lg:text-5xl font-extrabold mt-3 mb-4">Muhallebi</h1>
+                <h1 class="text-4xl lg:text-5xl font-extrabold mt-3 mb-4">@recipeDetails.recipeRegion.title.value</h1>
                 <p class="mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                 <h2 class="text-xl lg: text-3xl font-bold mb-2">Genel Bakış</h2>
                 <p class="mb-2"><span class="font-bold">Toplam Süre: </span>30-35 dakika</p>
@@ -86,7 +86,6 @@
     protected override async Task OnParametersSetAsync()
     {
         recipeDetails = await GetRecipeDetails();
-
     }
 
 
@@ -102,4 +101,17 @@
     {
         return await Http.GetFromJsonAsync<RecipeDetails.Root>($"http://localhost:20990/api/details/{recipe}");
     }
-}
+
+    public string ChangeSlugApperance()
+    {
+        var newCategory = category.Replace("-", " ");
+
+        if (newCategory.Length > 1)
+        {
+            return char.ToUpper(category[0]) + newCategory.Substring(1);
+        }
+
+        return newCategory;
+    }
+
+    }

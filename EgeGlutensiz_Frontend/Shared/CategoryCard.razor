@@ -1,15 +1,26 @@
-﻿<div class="max-w-[300px]">
-    <picture>
-        <source type="image/webp" srcset="images/bread.webp">
-        <img src="images/test2.png" alt="" class="hover:opacity-75 rounded-t-lg" />
-    </picture>
-    <div class="block max-w-sm p-4 bg-sky-100 rounded-b-lg">
-        <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Glutensiz ekmek</h2>
-        <p class="mb-1"><span class="font-semibold">Toplam Süre:</span> 60-70 dk</p>
-        <p class="mb-1"><span class="font-semibold">Porsiyon:</span> 4</p>
-        <NavLink href="/RecipeDetailsPage" Match="NavLinkMatch.All" class="inline-flex items-center mt-4 px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-t-lg rounded-bl-lg">
-            Read more
-            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-        </NavLink>
-    </div>
+﻿@using EgeGlutensiz_Frontend.Models
+
+<div class="max-w-[300px]">
+    <a href="/recipesInCategory">
+        <img src="@GetImgUrl()" alt="" class="hover:opacity-75 rounded-t-lg" />
+        <div class="block max-w-sm p-4 bg-sky-100 rounded-b-lg hover:bg-yellow-300">
+            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center">@recipeCategory.title</h2>
+        </div>
+    </a>
 </div>
+
+@code {
+
+    // Send the data to the category page
+    [Parameter]
+    public RecipeCategoryModel.Root recipeCategory { get; set; }
+
+    string baseUrl = "http://localhost:20990";
+
+    // Clean the image URL
+    public string GetImgUrl()
+    {
+        var cleanUrl = recipeCategory.recipeCategoryRegion.categoryImage.media.publicUrl.Replace("~", "");
+        return $"{baseUrl}{cleanUrl}";
+    }
+}

@@ -1,4 +1,5 @@
 ﻿@using EgeGlutensiz_Frontend.Models
+@inject NavigationManager UriHelper
 
 <div class="max-w-[300px]">
     <a href="/recipesInCategory">
@@ -22,5 +23,12 @@
     {
         var cleanUrl = recipeCategory.recipeCategoryRegion.categoryImage.media.publicUrl.Replace("~", "");
         return $"{baseUrl}{cleanUrl}";
+    }
+
+    // Skicka sluggen till product details
+    async Task GoToPage(string slug)
+    {
+        UriHelper.NavigateTo($"/{slug}");
+
     }
 }

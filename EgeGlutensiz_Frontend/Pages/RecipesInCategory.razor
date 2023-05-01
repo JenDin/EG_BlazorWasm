@@ -2,7 +2,7 @@
 @page "/tarifler/{slug}"
 @inject HttpClient Http
 
-<PageTitle>Tatlı tarifleri</PageTitle>
+<PageTitle>bajskorv</PageTitle>
 
 <nav class="flex w-92 ml-4 mt-8" aria-label="breadcrumb">
     <ul class="inline-flex items-center space-x-1 md:space-x-3">
@@ -21,15 +21,14 @@
         <li aria-current="page">
             <div class="flex items-center">
                 <svg aria-hidden="true" class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                <span class="ml-1 text-sm font-bold text-black md:ml-2">Tatlı tarifleri</span>
+                <span class="ml-1 text-sm font-bold text-black md:ml-2">@category?.title</span>
             </div>
         </li>
     </ul>
 </nav>
 
 <section class="mb-40">
-    <h1 class="text-4xl lg:text-5xl font-extrabold text-center mt-3 mb-20">Tatlı tarifleri</h1>
-
+    <h1 class="text-4xl lg:text-5xl font-extrabold text-center mt-3 mb-20">@category?.title</h1>
     <!-- Cards container -->
     <div class="mb-[5rem] flex justify-center gap-6 p-4 w-[450px] flex-wrap md:w-[700px] lg:w-[90%] max-w-[1200px] mx-auto">
         @if (recipesInCategory != null)
@@ -38,7 +37,6 @@
             @foreach (var recipe in recipesInCategory)
             {
                 <RecipeCategoryCard recipe="@recipe"></RecipeCategoryCard>
-
             }
         }
 
@@ -47,6 +45,7 @@
 
 @code {
     List<RecipeModel.Root> recipesInCategory = new List<RecipeModel.Root>();
+    RecipeCategoryModel.Root category { get; set; }
 
     // Skapa en property för att kunna spara sluggen
     [Parameter]
@@ -60,19 +59,28 @@
         return recipes != null ? recipes : new List<RecipeModel.Root>();
     }
 
+    public async Task<RecipeCategoryModel.Root> GetCategory()
+    {
+        var category = await Http.GetFromJsonAsync<RecipeCategoryModel.Root>($"http://localhost:20990/api/category/{slug}");
+        return category;
+    }
+
     public bool shouldRender = false;
     protected override bool ShouldRender() => shouldRender;
 
     protected override async Task OnInitializedAsync()
     {
         recipesInCategory = await GetAllRecipesInCategory();
+        category = await GetCategory();
         shouldRender = true;
     }
 
     protected override async Task OnParametersSetAsync()
     {
         recipesInCategory = await GetAllRecipesInCategory();
-        shouldRender = true;
+        category = await GetCategory();
+
+       shouldRender = true;
 
     }
 }

@@ -1,5 +1,7 @@
 ﻿
+@using EgeGlutensiz_Frontend.Models
 @page "/recipeDetailsPage"
+@inject HttpClient Http
 
 <PageTitle>Muhallebi</PageTitle>
 
@@ -76,3 +78,12 @@
         </div>
     </div>
 </section>
+
+@code {
+    RecipeDetails.Root recipeDetails;
+
+    public async Task<RecipeDetails.Root> GetRecipeDetails()
+    {
+        return await Http.GetFromJsonAsync<RecipeDetails.Root>(@"http://localhost:20990/api/details/{slug}");
+    }
+}

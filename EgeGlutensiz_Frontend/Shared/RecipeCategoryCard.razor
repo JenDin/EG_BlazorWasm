@@ -3,7 +3,7 @@
 
 <!-- Recipe card component -->
 <div class="max-w-[300px]">
-    <img src="images/test2.png" alt="" class="hover:opacity-75 rounded-t-lg" />
+    <img src="@GetImgUrl()" alt="" class="hover:opacity-75 rounded-t-lg" />
     <div class="block max-w-sm p-4 bg-sky-100 rounded-b-lg">
         @if (recipe != null)
         {<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">@recipe?.title</h2>
@@ -31,6 +31,14 @@
     {
         return recipe != null ?  $"{UriHelper.Uri}/{recipe.slug}" : "No bueno";
 
+    }
+
+    string baseUrl = "http://localhost:20990/";
+
+    public string GetImgUrl()
+    {
+        var cleanUrl = recipe.recipeRegion.recipeImage.media.publicUrl.Replace("~", "");
+        return $"{baseUrl}{cleanUrl}";
     }
 
     // Skicka sluggen till product details

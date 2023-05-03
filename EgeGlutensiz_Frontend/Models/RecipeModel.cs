@@ -1,8 +1,23 @@
 ﻿using System;
+using Newtonsoft.Json;
+
 namespace EgeGlutensiz_Frontend.Models
 {
 	public class RecipeModel
 	{
+        public class Block
+        {
+            [JsonProperty("$type")]
+            public string type { get; set; }
+            public Body body { get; set; }
+            public string id { get; set; }
+        }
+
+        public class Body
+        {
+            public string value { get; set; }
+        }
+
         public class CookingTime
         {
             public string value { get; set; }
@@ -13,74 +28,24 @@ namespace EgeGlutensiz_Frontend.Models
             public string value { get; set; }
         }
 
-        public class Ingredient1
+        public class Media
         {
-            public string value { get; set; }
-        }
-
-        public class Ingredient10
-        {
-            public object value { get; set; }
-        }
-
-        public class Ingredient11
-        {
-            public object value { get; set; }
-        }
-
-        public class Ingredient12
-        {
-            public object value { get; set; }
-        }
-
-        public class Ingredient13
-        {
-            public object value { get; set; }
-        }
-
-        public class Ingredient14
-        {
-            public object value { get; set; }
-        }
-
-        public class Ingredient2
-        {
-            public string value { get; set; }
-        }
-
-        public class Ingredient3
-        {
-            public string value { get; set; }
-        }
-
-        public class Ingredient4
-        {
-            public string value { get; set; }
-        }
-
-        public class Ingredient5
-        {
-            public string value { get; set; }
-        }
-
-        public class Ingredient6
-        {
-            public string value { get; set; }
-        }
-
-        public class Ingredient7
-        {
-            public string value { get; set; }
-        }
-
-        public class Ingredient8
-        {
-            public string value { get; set; }
-        }
-
-        public class Ingredient9
-        {
-            public object value { get; set; }
+            public Properties properties { get; set; }
+            public List<Version> versions { get; set; }
+            public string id { get; set; }
+            public object folderId { get; set; }
+            public int type { get; set; }
+            public string filename { get; set; }
+            public string contentType { get; set; }
+            public object title { get; set; }
+            public object altText { get; set; }
+            public object description { get; set; }
+            public int size { get; set; }
+            public string publicUrl { get; set; }
+            public int width { get; set; }
+            public int height { get; set; }
+            public DateTime created { get; set; }
+            public DateTime lastModified { get; set; }
         }
 
         public class OgImage
@@ -102,10 +67,14 @@ namespace EgeGlutensiz_Frontend.Models
             public bool hasValue { get; set; }
         }
 
+        public class Properties
+        {
+        }
+
         public class RecipeImage
         {
-            public object id { get; set; }
-            public object media { get; set; }
+            public string id { get; set; }
+            public Media media { get; set; }
             public bool hasValue { get; set; }
         }
 
@@ -117,30 +86,6 @@ namespace EgeGlutensiz_Frontend.Models
             public TotalDuration totalDuration { get; set; }
             public CookingTime cookingTime { get; set; }
             public DifficultyLevel difficultyLevel { get; set; }
-            public Ingredient1 ingredient1 { get; set; }
-            public Ingredient2 ingredient2 { get; set; }
-            public Ingredient3 ingredient3 { get; set; }
-            public Ingredient4 ingredient4 { get; set; }
-            public Ingredient5 ingredient5 { get; set; }
-            public Ingredient6 ingredient6 { get; set; }
-            public Ingredient7 ingredient7 { get; set; }
-            public Ingredient8 ingredient8 { get; set; }
-            public Ingredient9 ingredient9 { get; set; }
-            public Ingredient10 ingredient10 { get; set; }
-            public Ingredient11 ingredient11 { get; set; }
-            public Ingredient12 ingredient12 { get; set; }
-            public Ingredient13 ingredient13 { get; set; }
-            public Ingredient14 ingredient14 { get; set; }
-            public Step1 step1 { get; set; }
-            public Step2 step2 { get; set; }
-            public Step3 step3 { get; set; }
-            public Step4 step4 { get; set; }
-            public Step5 step5 { get; set; }
-            public Step6 step6 { get; set; }
-            public Step7 step7 { get; set; }
-            public Step8 step8 { get; set; }
-            public Step9 step9 { get; set; }
-            public Step10 step10 { get; set; }
         }
 
         public class Root
@@ -169,7 +114,7 @@ namespace EgeGlutensiz_Frontend.Models
             public object route { get; set; }
             public object redirectUrl { get; set; }
             public int redirectType { get; set; }
-            public List<object> blocks { get; set; }
+            public List<Block> blocks { get; set; }
             public bool enableComments { get; set; }
             public int closeCommentsAfterDays { get; set; }
             public int commentCount { get; set; }
@@ -184,56 +129,6 @@ namespace EgeGlutensiz_Frontend.Models
             public DateTime lastModified { get; set; }
         }
 
-        public class Step1
-        {
-            public string value { get; set; }
-        }
-
-        public class Step10
-        {
-            public object value { get; set; }
-        }
-
-        public class Step2
-        {
-            public string value { get; set; }
-        }
-
-        public class Step3
-        {
-            public string value { get; set; }
-        }
-
-        public class Step4
-        {
-            public string value { get; set; }
-        }
-
-        public class Step5
-        {
-            public string value { get; set; }
-        }
-
-        public class Step6
-        {
-            public string value { get; set; }
-        }
-
-        public class Step7
-        {
-            public object value { get; set; }
-        }
-
-        public class Step8
-        {
-            public object value { get; set; }
-        }
-
-        public class Step9
-        {
-            public object value { get; set; }
-        }
-
         public class Title
         {
             public string value { get; set; }
@@ -244,7 +139,14 @@ namespace EgeGlutensiz_Frontend.Models
             public string value { get; set; }
         }
 
-
+        public class Version
+        {
+            public string id { get; set; }
+            public int size { get; set; }
+            public int width { get; set; }
+            public int height { get; set; }
+            public string fileExtension { get; set; }
+        }
     }
 }
 

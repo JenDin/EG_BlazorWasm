@@ -690,8 +690,8 @@ video {
 .w-\[450px\] {
   width: 450px;
 }
-.w-\[70px\] {
-  width: 70px;
+.w-\[80px\] {
+  width: 80px;
 }
 .w-\[90\%\] {
   width: 90%;
@@ -1165,6 +1165,14 @@ body {
 
 @media (min-width: 768px) {
 
+  .md\:absolute {
+    position: absolute;
+  }
+
+  .md\:top-4 {
+    top: 1rem;
+  }
+
   .md\:m-0 {
     margin: 0px;
   }
@@ -1266,6 +1274,10 @@ body {
 
   .md\:bg-transparent {
     background-color: transparent;
+  }
+
+  .md\:p-4 {
+    padding: 1rem;
   }
 }
 

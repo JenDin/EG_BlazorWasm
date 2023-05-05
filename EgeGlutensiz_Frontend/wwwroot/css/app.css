@@ -22,3 +22,17 @@ body {
     flex-direction: column;
     background: #f8f9fa;
 }
+
+.recipe-ingredients > ul > li {
+    background: #fff;
+    margin-bottom: .5rem;
+    border-radius: .5rem;
+    padding: .75rem;
+}
+
+.recipe-method > ol > li {
+    background: #fff;
+    margin-bottom: .5rem;
+    border-radius: .5rem;
+    padding: 1.5rem;
+}

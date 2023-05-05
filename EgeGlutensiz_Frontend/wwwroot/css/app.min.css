@@ -720,9 +720,6 @@ video {
 .max-w-\[300px\] {
   max-width: 300px;
 }
-.max-w-\[400px\] {
-  max-width: 400px;
-}
 .max-w-\[450px\] {
   max-width: 450px;
 }
@@ -857,10 +854,6 @@ video {
 }
 .bg-transparent {
   background-color: transparent;
-}
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .fill-current {
   fill: currentColor;
@@ -1011,6 +1004,20 @@ body {
     display: flex;
     flex-direction: column;
     background: #f8f9fa;
+}
+
+.recipe-ingredients > ul > li {
+    background: #fff;
+    margin-bottom: .5rem;
+    border-radius: .5rem;
+    padding: .75rem;
+}
+
+.recipe-method > ol > li {
+    background: #fff;
+    margin-bottom: .5rem;
+    border-radius: .5rem;
+    padding: 1.5rem;
 }
 
 .hover\:bg-blue-800:hover {

@@ -60,25 +60,18 @@
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Gerekli Malzemeler</h2>
             @if (recipeDetails != null)
             {
-                @foreach (var ingredient in recipeDetails.blocks)
-                {
-                    @*if (ingredient is HtmlBlock block)
-                    {
-                        <p class="bg-white rounded-lg mb-1 p-3 max-w-[400px]">@block.body.value</p>
-                    }*@
-                }
+                <div class="recipe-ingredients">
+                    @((MarkupString)recipeDetails.recipeRegion.ingredientsHtml.value)
+                </div>
             }
         </div>
         <!-- Method -->
         <div class="lg:w-8/12 mb-6">
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Yapılışı</h2>
-            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">1.</span> Öncelikle pirinci yıkayıp su ile ateşe koyun</p>
-            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">2.</span> Pirinçler uzayıp suyu çekene kadar kaynatın, soğuk sütü ekleyin</p>
-            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">3.</span> 1-2 defa karıştırıp, kaynamasını bekleyin</p>
-            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">4.</span> Bu arada bir kasede pirinç ununu 1 su bardağı soğuk süt ile ezin. Tencerede kaynamakta olan sütten 1-2 kepçe alıp kaseye ekleyin. (pirinç unu ılınmış olmalı)</p>
-            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">5.</span> Pirinç ununu tencereye ekleyin, ara sıra karıştırarak 10 dakika kadar pişirin</p>
-            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">6.</span> Toz şekeri ilave edip karıştırın ve 1-2 taşım kaynatın</p>
-            <p class="bg-white rounded-lg mb-1 p-6"><span class="font-bold">7.</span> Sütlacı kaselere paylaştırın. Soğuyunca sütlaçların üzerlerine tarçın serperek servis edebilirsiniz</p>
+            @if (recipeDetails != null)
+            {
+                <div class="recipe-method">@((MarkupString)recipeDetails.recipeRegion.methodHtml.value)</div>
+            }
         </div>
     </div>
 </section>
@@ -102,11 +95,11 @@
     [Parameter]
     public string recipe { get; set; }
 
-    RecipeDetails.Root recipeDetails;
+    RecipeDetails recipeDetails;
 
-    public async Task<RecipeDetails.Root> GetRecipeDetails()
+    public async Task<RecipeDetails> GetRecipeDetails()
     {
-        return await Http.GetFromJsonAsync<RecipeDetails.Root>($"http://localhost:20990/api/details/{recipe}");
+        return await Http.GetFromJsonAsync<RecipeDetails>($"http://localhost:20990/api/details/{recipe}");
     }
 
     string baseUrl = "http://localhost:20990/";

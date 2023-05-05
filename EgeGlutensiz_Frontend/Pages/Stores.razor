@@ -1,4 +1,6 @@
-﻿@page "/satis_agi"
+﻿@using EgeGlutensiz_Frontend.Models
+@page "/satis_agi"
+@inject HttpClient Http
 
 <PageTitle>Satış ağı</PageTitle>
 
@@ -20,7 +22,46 @@
 </nav>
 
 <section class="mt-10 mb-48 lg:mb-16">
-    <h1 class="text-4xl lg:text-5xl font-extrabold text-center mt-3">Satış ağı</h1>
+    <h1 class="text-4xl lg:text-5xl font-extrabold text-center mt-3 mb-6">Satış ağı</h1>
 
- 
+    <div class="max-w-[1100px] mx-auto flex justify-center items-center flex-wrap gap-4 p-4">
+        @if (storesModel != null)
+        {
+            @foreach (var model in storesModel)
+            {
+                foreach (var block in model.blocks)
+                {
+                    foreach (var logo in block.items)
+                    {
+                        var altText = logo.body.media.altText;
+
+                        var cleanUrl = logo.body.media.publicUrl.Replace("~", "");
+                        var fullUrl = $"{baseUrl}{cleanUrl}";
+
+                        <div class="max-w-[160px] mx-auto mb-6 lg:mb-0">
+                            <img src="@fullUrl" alt="@altText" class="" />
+                        </div>
+                    }
+
+                }
+            }
+        }
+    </div>
 </section>
+
+@code {
+
+    List<StoresModel.Root> storesModel;
+
+    public async Task<List<StoresModel.Root>> GetAllStores()
+    {
+        return await Http.GetFromJsonAsync<List<StoresModel.Root>>("http://localhost:20990/api/stores/all");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        storesModel = await GetAllStores();
+    }
+
+    string baseUrl = "http://localhost:20990/";
+}

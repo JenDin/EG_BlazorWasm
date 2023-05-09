@@ -3,7 +3,7 @@
 
 <!-- Recipe card component -->
 <div class="max-w-[300px]">
-    <img src="@GetImgUrl()" alt="" class="hover:opacity-75 rounded-t-lg" />
+    <img src="@GetImgUrl()" alt="@recipe.recipeRegion.recipeImage.media.altText" class="hover:opacity-75 rounded-t-lg" />
     <div class="block max-w-sm p-4 bg-sky-100 rounded-b-lg">
         @if (recipe != null)
         {<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">@recipe?.title</h2>

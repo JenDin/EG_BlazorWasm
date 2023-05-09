@@ -186,11 +186,11 @@
 
     }
 
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    productPageModel = await GetPage();
-    //    ImageUrl = GetImgUrl();
-    //}
+    protected override async Task OnInitializedAsync()
+    {
+        productPageModel = await GetPage();
+        ImageUrl = GetImgUrl();
+    }
 
     // Base URL
     string baseUrl = "http://localhost:20990/";

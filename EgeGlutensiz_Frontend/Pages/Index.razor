@@ -1,6 +1,27 @@
-﻿@page "/"
+﻿@using EgeGlutensiz_Frontend.Models
+@page "/"
+@inject HttpClient Http
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Ev</PageTitle>
 
 <h1 class="text-red-500">Hello, world!</h1>
 <p>1 Çay kaşığı Vanilya. Höhü</p>
+
+<p>@postModel.postRegion.title.value</p>
+<p>@postModel.postRegion.topContent.value</p>
+
+@code {
+
+    PostModel.Root postModel;
+
+    public async Task<PostModel.Root> GetTopPost()
+    {
+        return await Http.GetFromJsonAsync<PostModel.Root>("http://localhost:20990/api/post/d9306945-e28f-42d7-9497-7cb2df380dd2/test");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        postModel = await GetTopPost();
+    }
+
+}

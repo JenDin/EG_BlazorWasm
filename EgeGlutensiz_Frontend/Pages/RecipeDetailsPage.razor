@@ -4,7 +4,7 @@
 @inject HttpClient Http
 @inject NavigationManager UriHelper;
 
-<PageTitle>Details</PageTitle>
+<PageTitle>Ege Glutensiz | @ChangeRecipeSlugApperance() </PageTitle>
 
 <nav class="flex w-92 ml-4 mt-8" aria-label="breadcrumb">
     <ul class="inline-flex items-center space-x-1 md:space-x-3">
@@ -117,6 +117,18 @@
         if (newCategory.Length > 1)
         {
             return char.ToUpper(category[0]) + newCategory.Substring(1);
+        }
+
+        return newCategory;
+    }
+
+    public string ChangeRecipeSlugApperance()
+    {
+        var newCategory = recipe.Replace("-", " ");
+
+        if (newCategory.Length > 1)
+        {
+            return char.ToUpper(recipe[0]) + newCategory.Substring(1);
         }
 
         return newCategory;

@@ -1,19 +1,16 @@
 ﻿@using EgeGlutensiz_Frontend.Models;
-@inject NavigationManager UriHelper
-
 
 <article class="w-[240px] text-center mx-auto md:mx-0 mb-10">
     <a href="ürünler/@product.permalink" class="hover:opacity-75">
         <picture>
-
+            <source type="image/webp" srcset="@GetImgUrl()">
+            <img src="" alt="@product.productRegion.productImage.media.altText" class="h-[280px] mx-auto pb-4" />
         </picture>
-        <img src="@GetImgUrl()" alt="@product.productRegion.productImage.media.altText" class="h-[280px] mx-auto pb-4" />
     </a>
     <h2 class="text-lg font-bold">@product.title</h2>
 </article>
 
 @code {
-    // 
     [Parameter]
     public ProductPageModel.Root product { get; set; }
 
@@ -25,13 +22,4 @@
         var cleanUrl = product.productRegion.productImage.media.publicUrl.Replace("~", "");
         return $"{baseUrl}{cleanUrl}";
     }
-
-    //// Skicka sluggen till product details
-    //async Task GoToPage(string slug)
-    //{
-    //    UriHelper.NavigateTo($"/{slug}");
-
-    //}
-
-
 }

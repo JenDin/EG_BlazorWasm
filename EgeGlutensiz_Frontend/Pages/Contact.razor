@@ -1,6 +1,6 @@
 ﻿@page "/iletişim"
 
-<PageTitle>İletişim</PageTitle>
+<PageTitle>Ege Glutensiz | İletişim</PageTitle>
 
 <nav class="flex w-52 ml-4 mt-8" aria-label="breadcrumb">
     <ul class="inline-flex items-center space-x-1 md:space-x-3">
@@ -19,57 +19,58 @@
     </ul>
 </nav>
 
-<h1 class="text-4xl 2xl:text-5xl font-extrabold text-center mt-3">İletişim</h1>
+<section>
+    <h1 class="text-4xl 2xl:text-5xl font-extrabold text-center mt-3">İletişim</h1>
+    <div class="md:flex md:justify-center w-[450px] md:w-full max-w-[1000px] mx-auto mt-10 mb-[70px]">
+        <!-- Contact container -->
+        <div class="md:w/1-2 p-6 md:ml-10">
+            <article class="mb-6">
+                <h2 class="text-xl font-bold mb-1.5">Merkez Ofis</h2>
+                <p class="mb-1">Bağlarbaşı Mah. Şahin Sok. No: 18/1</p>
+                <p class="mb-4">Maltepe, İstanbul</p>
+                <p class="flex items-center mb-1.5"><span class="material-symbols-outlined mr-1">call</span><span class="font-semibold">Tel:</span> 0216 442 73 33</p>
+                <p class="flex items-center mb-1.5"><span class="material-symbols-outlined mr-1">mail</span><span class="font-semibold">Email:</span> info@egeglutensiz.com</p>
+            </article>
+            <article>
+                <h2 class="text-xl font-bold mb-1.5">Fabrika</h2>
+                <p class="mb-1">Harmandalı Mevkii, Ege Sanayi Sitesi</p>
+                <p class="mb-1">8901 Sokak No: 42/23</p>
+                <p class="mb-4">Çiğli, İzmir</p>
+                <p class="flex items-center mb-1.5"><span class="material-symbols-outlined mr-1">call</span><span class="font-semibold">Tel:</span> 0232 376 51 51</p>
+            </article>
+        </div>
 
-<section class="md:flex md:justify-center w-[450px] md:w-full max-w-[1000px] mx-auto mt-10 mb-[70px]">
-    <!-- Contact container -->
-    <div class="md:w/1-2 p-6 md:ml-10">
-        <article class="mb-6">
-            <h2 class="text-xl font-bold mb-1.5">Merkez Ofis</h2>
-            <p class="mb-1">Bağlarbaşı Mah. Şahin Sok. No: 18/1</p>
-            <p class="mb-4">Maltepe, İstanbul</p>
-            <p class="flex items-center mb-1.5"><span class="material-symbols-outlined mr-1">call</span><span class="font-semibold">Tel:</span> 0216 442 73 33</p>
-            <p class="flex items-center mb-1.5"><span class="material-symbols-outlined mr-1">mail</span><span class="font-semibold">Email:</span> info@egeglutensiz.com</p>
-        </article>
-        <article>
-            <h2 class="text-xl font-bold mb-1.5">Fabrika</h2>
-            <p class="mb-1">Harmandalı Mevkii, Ege Sanayi Sitesi</p>
-            <p class="mb-1">8901 Sokak No: 42/23</p>
-            <p class="mb-4">Çiğli, İzmir</p>
-            <p class="flex items-center mb-1.5"><span class="material-symbols-outlined mr-1">call</span><span class="font-semibold">Tel:</span> 0232 376 51 51</p>
-        </article>
-    </div>
+        <!-- Vertical separator -->
+        <div class="hidden md:block max-w-[100%] m-auto md:m-0 border border-1 h-auto relative top-0 border-black"></div>
 
-    <!-- Vertical separator -->
-    <div class="hidden md:block max-w-[100%] m-auto md:m-0 border border-1 h-auto relative top-0 border-black"></div>
-
-    <!-- Form container -->
-    <div class="md:w/1-2 p-6 max-w-[450px] md:max-w-none">
-        <form action="https://formspree.io/f/xzbqoozz" method="post">
-            <div class="grid md:grid-cols-2 md:gap-2">
-                <div class="relative z-0 w-full mb-6 group">
-                    <input type="text" name="firstName" id="firstName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required />
-                    <label for="firstName" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Ad</label>
+        <!-- Form container -->
+        <div class="md:w/1-2 p-6 max-w-[450px] md:max-w-none">
+            <form action="https://formspree.io/f/xzbqoozz" method="post">
+                <div class="grid md:grid-cols-2 md:gap-2">
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="firstName" id="firstName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required />
+                        <label for="firstName" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Ad</label>
+                    </div>
+                    <div class="relative z-0 w-full mb-6 group">
+                        <input type="text" name="lastName" id="lastName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required />
+                        <label for="lastName" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Soyad</label>
+                    </div>
                 </div>
                 <div class="relative z-0 w-full mb-6 group">
-                    <input type="text" name="lastName" id="lastName" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required />
-                    <label for="lastName" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Soyad</label>
+                    <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required />
+                    <label for="email" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
                 </div>
-            </div>
-            <div class="relative z-0 w-full mb-6 group">
-                <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required />
-                <label for="email" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
-            </div>
-            <div class="relative z-0 w-full mb-6 group">
-                <input type="text" name="subject" id="subject" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required />
-                <label for="subject" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Konu</label>
-            </div>
-            <div class="relative z-0 w-full mb-6 group">
-                <input type="text" name="message" id="message" class="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required />
-                <label for="message" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mesajınız</label>
-            </div>
-            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm w-full md:w-auto px-5 py-2.5 text-center rounded-t-lg rounded-bl-lg">Mesaj Yolla</button>
-        </form>
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="text" name="subject" id="subject" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required />
+                    <label for="subject" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Konu</label>
+                </div>
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="text" name="message" id="message" class="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" required />
+                    <label for="message" class="peer-focus:font-medium absolute text-lg text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Mesajınız</label>
+                </div>
+                <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm w-full md:w-auto px-5 py-2.5 text-center rounded-t-lg rounded-bl-lg">Mesaj Yolla</button>
+            </form>
+        </div>
     </div>
 </section>
 

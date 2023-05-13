@@ -25,15 +25,20 @@ body {
 }
 
 .recipe-ingredients > ul > li {
-    background: #fff;
+    /*    background: #fff;*/
     margin-bottom: .5rem;
     border-radius: .5rem;
     padding: .75rem;
 }
 
 .recipe-method > ol > li {
-    background: #fff;
+/*   background: #fff;
     margin-bottom: .5rem;
-    border-radius: .5rem;
+    border-radius: .5rem;*/
     padding: 1.5rem;
+    border-bottom: 1px solid;
 }
+
+    .recipe-method > ol > li:last-child {
+        border: none;
+    }

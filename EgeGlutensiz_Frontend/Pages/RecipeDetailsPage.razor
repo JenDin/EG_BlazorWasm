@@ -37,7 +37,7 @@
 
 <section class="mt-16 mb-40">
     <!-- Image, title and details -->
-    <div class="bg-pink-100 lg:flex justify-center w-[90%] max-w-[800px] lg:max-w-[1200px] mx-auto rounded-tr-lg rounded-br-lg">
+    <div class="bg-[#d7c0a6] lg:flex justify-center w-[90%] max-w-[800px] lg:max-w-[1200px] mx-auto rounded-tr-lg rounded-br-lg">
         <div class="lg:w-1/2">
             <img src="@GetImgUrl()" alt="" class="w-full h-full rounded-tl-lg rounded-bl-lg" />
         </div>
@@ -56,8 +56,8 @@
 
     <!-- Ingredients -->
     <div class="lg:flex justify-center w-[90%] max-w-[800px] lg:max-w-[1200px] mx-auto mt-10 gap-4">
-        <div class="lg:w-4/12 mb-6">
-            <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Gerekli Malzemeler</h2>
+        <div class="lg:w-3/12 mb-6">
+            <h2 class="mb-6 text-2xl font-bold tracking-tight text-gray-900">Gerekli Malzemeler</h2>
             @if (recipeDetails != null)
             {
                 <div class="recipe-ingredients">
@@ -65,8 +65,12 @@
                 </div>
             }
         </div>
+
+        <!-- Vertical separator -->
+        <div class="hidden md:block max-w-[100%] m-auto md:m-0 border h-auto relative top-0 border-black recipe-separator"></div>
+
         <!-- Method -->
-        <div class="lg:w-8/12 mb-6">
+        <div class="lg:w-9/12 mb-6">
             <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Yapılışı</h2>
             @if (recipeDetails != null)
             {

@@ -3,15 +3,15 @@
 
 <!-- Recipe card component -->
 <div class="max-w-[300px]">
-    <img src="@GetImgUrl()" alt="@recipe.recipeRegion.recipeImage.media.altText" class="hover:opacity-75 rounded-t-lg" />
-    <div class="block max-w-sm p-4 bg-sky-100 rounded-b-lg">
+    <img src="@GetImgUrl()" alt="@recipe.recipeRegion.recipeImage.media.altText" class="rounded-t-lg" />
+    <div class="block max-w-sm p-4 bg-[#d7c0a6] rounded-b-lg">
         @if (recipe != null)
         {<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">@recipe?.title</h2>
     }
         <p class="mb-2 flex items-center"><span class="material-symbols-outlined mr-1">schedule</span><span class="font-semibold">Toplam Süre:</span><span class="pl-1">@recipe?.recipeRegion?.totalDuration?.value dk</span></p>
         <p class="mb-1 flex items-center"><span class="material-symbols-outlined mr-1">restaurant</span><span class="font-semibold">Porsiyon:</span><span class="pl-1">@recipe?.recipeRegion?.portions?.value</span></p>
 
-            <a href="@GetUrl()" class="inline-flex items-center mt-4 px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-t-lg rounded-bl-lg">
+            <a href="@GetUrl()" class="inline-flex items-center mt-4 px-3 py-2 text-sm font-medium text-center text-white bg-[#774936] hover:bg-[#A3644D] rounded-t-lg rounded-bl-lg">
                 Read more
                 <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </a>

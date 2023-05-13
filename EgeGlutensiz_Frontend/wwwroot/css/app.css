@@ -21,6 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     background: #f8f9fa;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .recipe-ingredients > ul > li {

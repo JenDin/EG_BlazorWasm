@@ -1,10 +1,10 @@
 ﻿<header>
-    <nav class="bg-[#d7c0a6] text-white md:flex md:justify-between md:items-center relative md:p-4">
-        <div class="bg-[#d7c0a6] text-white">
+    <nav class="bg-[#d7c0a6] text-[#513024] md:flex md:justify-between md:items-center relative md:p-4">
+        <div>
             <div class="flex items-center justify-between p-3">
                 <!-- Logo -->
                 <div class="md:absolute md:top-4">
-                    <NavLink href="/"><img src="/images/logo.png" alt="Ege Glutensiz yazan kırmızı logo" class="w-[80px]" /></NavLink>
+                    <NavLink href="/"><img src="/images/logo.png" alt="Ege Glutensiz yazan kırmızı logo" class="w-[80px] md:w-[115px]" /></NavLink>
                 </div>
 
                 <!-- Hamburger icon -->
@@ -22,7 +22,7 @@
         }
 
         <!-- Links -->
-        <ul class="@($"flex flex-col {menuVisibleClass} bg-[#d7c0a6] px-4 py-2 md:flex md:flex-row md:bg-transparent")">
+        <ul class="@($"flex flex-col {menuVisibleClass} bg-[#d7c0a6] px-4 py-2 md:flex md:flex-row md:bg-transparent font-semibold")">
             <li><NavLink class="mr-3 py-2 block hover:underline" href="/ürünler" Match="NavLinkMatch.All">Ürünler</NavLink></li>
             <li><NavLink class="mr-3 py-2 block hover:underline" href="/tarifler" Match="NavLinkMatch.All">Tarifler</NavLink></li>
             <li><NavLink class="py-2 block hover:underline" href="/satis_agi" Match="NavLinkMatch.All">Satış ağı</NavLink></li>

@@ -25,17 +25,13 @@ body {
 }
 
 .recipe-ingredients > ul > li {
-    /*    background: #fff;*/
     margin-bottom: .5rem;
     border-radius: .5rem;
-    padding: .75rem;
+    padding: .75rem 0 0 0;
 }
 
 .recipe-method > ol > li {
-/*   background: #fff;
-    margin-bottom: .5rem;
-    border-radius: .5rem;*/
-    padding: 1.5rem;
+    padding: 1.5rem 0rem;
     border-bottom: 1px solid;
 }
 

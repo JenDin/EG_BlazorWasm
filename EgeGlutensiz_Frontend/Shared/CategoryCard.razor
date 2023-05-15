@@ -1,5 +1,5 @@
 ﻿@using EgeGlutensiz_Frontend.Models
-@inject NavigationManager UriHelper
+@*@inject NavigationManager UriHelper*@
 
 <!-- Category card component -->
 <div class="max-w-[300px]">
@@ -27,8 +27,8 @@
     }
 
     // Skicka sluggen
-    async Task GoToPage()
-    {
-        UriHelper.NavigateTo($"/{recipeCategory.    permalink}");
-    }
+    //async Task GoToPage()
+    //{
+    //    UriHelper.NavigateTo($"/{recipeCategory.permalink}");
+    //}
 }

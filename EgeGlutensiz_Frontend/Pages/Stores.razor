@@ -39,7 +39,10 @@
                         var fullUrl = $"{baseUrl}{cleanUrl}";
 
                         <div class="max-w-[160px] mx-auto mb-6 lg:mb-0">
-                            <img src="@fullUrl" alt="@altText" class="" />
+                            <picture>
+                                <source type="image/webp" srcset="@fullUrl">
+                                <img src="@fullUrl" alt="@altText"/>
+                            </picture>
                         </div>
                     }
 

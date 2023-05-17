@@ -39,7 +39,6 @@
                 <RecipeCategoryCard recipe="@recipe"></RecipeCategoryCard>
             }
         }
-
     </div>
 </section>
 
@@ -54,7 +53,6 @@
     // Get all recipes belonging to a specific category
     public async Task<List<RecipeModel.Root>> GetAllRecipesInCategory()
     {
-
         var recipes =  await Http.GetFromJsonAsync<List<RecipeModel.Root>>($"http://localhost:20990/api/recipes_category/{slug}");
         return recipes != null ? recipes : new List<RecipeModel.Root>();
     }
@@ -80,7 +78,7 @@
         recipesInCategory = await GetAllRecipesInCategory();
         category = await GetCategory();
 
-       shouldRender = true;
+        shouldRender = true;
 
     }
 }

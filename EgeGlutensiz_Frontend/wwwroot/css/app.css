@@ -38,3 +38,21 @@ body {
     .recipe-method > ol > li:last-child {
         border: none;
     }
+
+.hero-small {
+    background-image: url("/images/hero_small.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.hero-big {
+    background-image: url("/images/heroimg.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 95vh;
+}

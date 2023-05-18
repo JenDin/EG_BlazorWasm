@@ -4,23 +4,20 @@
 
 <PageTitle>Ege Glutensiz | Ev</PageTitle>
 
-<p>1 Çay kaşığı Vanilya. Höhü</p>
+<div class="hero-small md:hidden">
+    <div class="pt-60 pl-20 max-w-[90%]">
+        <h1 class="text-5xl font-bold text-[#cf152c]">Lezzeti Glutensiz Yaşa!</h1>
+        <a href="/ürünler" class="inline-flex items-center mt-4 px-14 py-4 text-xl font-medium text-center text-white bg-[#774936] hover:bg-[#A3644D] rounded-t-lg rounded-bl-lg focus:ring-4 focus:outline-none focus:ring-blue-300">
+            Keşfet
+        </a>
+    </div>
+</div>
 
-<p>@postModel.postRegion.title.value</p>
-<p>@postModel.postRegion.topContent.value</p>
-
-@code {
-
-    PostModel.Root postModel;
-
-    public async Task<PostModel.Root> GetTopPost()
-    {
-        return await Http.GetFromJsonAsync<PostModel.Root>("http://localhost:20990/api/post/d9306945-e28f-42d7-9497-7cb2df380dd2/test");
-    }
-
-    protected override async Task OnInitializedAsync()
-    {
-        postModel = await GetTopPost();
-    }
-
-}
+<div class="hero-big hidden md:block">
+        <div class="pt-60 pl-20">
+            <h1 class="text-7xl font-bold text-[#cf152c]">Lezzeti Glutensiz Yaşa!</h1>
+            <a href="/ürünler" class="inline-flex items-center mt-4 px-14 py-2 text-xl font-medium text-center text-white bg-[#774936] hover:bg-[#A3644D] rounded-t-lg rounded-bl-lg focus:ring-4 focus:outline-none focus:ring-blue-300">
+                Keşfet
+            </a>
+        </div>
+</div>

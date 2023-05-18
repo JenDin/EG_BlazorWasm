@@ -1093,9 +1093,9 @@ body {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-    .hover\:text-\[\#457b9d\]:hover {
+    .hover\:text-\[\#A3644D\]:hover {
   --tw-text-opacity: 1;
-  color: rgb(69 123 157 / var(--tw-text-opacity));
+  color: rgb(163 100 77 / var(--tw-text-opacity));
 }
 
     .hover\:underline:hover {
@@ -1136,6 +1136,11 @@ body {
     .focus\:ring-blue-300:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(147 197 253 / var(--tw-ring-opacity));
+}
+
+    .focus\:ring-blue-500:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
 }
 
     .peer:-moz-placeholder-shown ~ .peer-placeholder-shown\:translate-y-0 {

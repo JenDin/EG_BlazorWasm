@@ -5,7 +5,7 @@
 <div class="max-w-[300px]">
     <picture>
         <source type="image/webp" srcset="@GetImgUrl()">
-        <img src="@GetImgUrl()" alt="@recipe.recipeRegion.recipeImage.media.altText" class="rounded-t-lg">
+        <img src="@GetImgUrl()" alt="@recipe.recipeRegion.recipeImage.media.altText" loading="lazy" class="rounded-t-lg">
     </picture>
     <div class="block max-w-sm p-4 bg-[#d7c0a6] rounded-b-lg">
         @if (recipe != null)

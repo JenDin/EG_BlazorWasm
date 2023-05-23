@@ -4,11 +4,11 @@
             <div class="flex items-center justify-between p-3">
                 <!-- Logo -->
                 <div class="md:absolute md:top-4">
-                    <NavLink href="/"><img src="/images/logo.png" alt="Ege Glutensiz yazan kırmızı logo" class="w-[80px] md:w-[115px] focus:ring-4 focus:outline-none focus:ring-blue-500" /></NavLink>
+                    <NavLink href="/"><img src="/images/logo.png" alt="Ege Glutensiz yazan kırmızı logo" class="w-[80px] md:w-[115px] focus:ring-4" /></NavLink>
                 </div>
 
                 <!-- Hamburger icon -->
-                <button @onclick="ToggleMenu" type="button" aria-label="Menü aç" class="md:hidden focus:ring-4 focus:outline-none focus:ring-blue-500">
+                <button @onclick="ToggleMenu" type="button" aria-label="Menü aç" class="md:hidden">
                     <svg class="h-6 w-6 fill-current" aria-hidden="true" focusable="false" viewBox="0 0 24 24">
                         <path fill-rule="evenodd"
                               d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
@@ -23,9 +23,9 @@
 
         <!-- Links -->
         <ul class="@($"flex flex-col {menuVisibleClass} bg-[#d7c0a6] px-4 py-2 md:flex md:flex-row md:bg-transparent font-bold text-[1.4rem]")">
-            <li><NavLink class="mr-4 py-2 block hover:underline focus:ring-4 focus:outline-none focus:ring-blue-500" href="/ürünler" Match="NavLinkMatch.All">Ürünler</NavLink></li>
-            <li><NavLink class="mr-4 py-2 block hover:underline focus:ring-4 focus:outline-none focus:ring-blue-500" href="/tarifler" Match="NavLinkMatch.All">Tarifler</NavLink></li>
-            <li><NavLink class="py-2 block hover:underline focus:ring-4 focus:outline-none focus:ring-blue-500" href="/satis_agi" Match="NavLinkMatch.All">Satış ağı</NavLink></li>
+            <li><NavLink class="mr-4 py-2 block hover:underline" href="/ürünler" Match="NavLinkMatch.All">Ürünler</NavLink></li>
+            <li><NavLink class="mr-4 py-2 block hover:underline" href="/tarifler" Match="NavLinkMatch.All">Tarifler</NavLink></li>
+            <li><NavLink class="py-2 block hover:underline" href="/satis_agi" Match="NavLinkMatch.All">Satış ağı</NavLink></li>
         </ul>
     </nav>
 </header>

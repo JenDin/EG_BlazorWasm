@@ -586,8 +586,8 @@ video {
 .mb-\[12rem\] {
   margin-bottom: 12rem;
 }
-.mb-\[148px\] {
-  margin-bottom: 148px;
+.mb-\[170px\] {
+  margin-bottom: 170px;
 }
 .mb-\[70px\] {
   margin-bottom: 70px;
@@ -1016,6 +1016,10 @@ video {
 }
 .tracking-wider {
   letter-spacing: 0.05em;
+}
+.text-\[\#0000EE\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 238 / var(--tw-text-opacity));
 }
 .text-\[\#513024\] {
   --tw-text-opacity: 1;

@@ -56,11 +56,13 @@
 
     List<StoresModel.Root> storesModel;
 
+    // Get all the store logos
     public async Task<List<StoresModel.Root>> GetAllStores()
     {
         return await Http.GetFromJsonAsync<List<StoresModel.Root>>("http://localhost:20990/api/stores/all");
     }
 
+    // Run the code once the page loads
     protected override async Task OnInitializedAsync()
     {
         storesModel = await GetAllStores();

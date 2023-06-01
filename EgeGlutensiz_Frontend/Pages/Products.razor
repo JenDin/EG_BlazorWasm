@@ -42,14 +42,15 @@
 
     List<ProductPageModel.Root> ProductPages;
 
+    // Get all products
     public async Task<List<ProductPageModel.Root>> GetAllProducts()
     {
         return await Http.GetFromJsonAsync<List<ProductPageModel.Root>>("http://localhost:20990/api/products/all");
     }
 
-        // Kör koden när komponenten laddas in
-        protected override async Task OnInitializedAsync()
-        {
-             ProductPages = await GetAllProducts();
-        }
+    // Run the code once the page loads
+    protected override async Task OnInitializedAsync()
+    {
+        ProductPages = await GetAllProducts();
+    }
 }

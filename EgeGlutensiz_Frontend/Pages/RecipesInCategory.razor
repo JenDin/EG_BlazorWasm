@@ -43,10 +43,11 @@
 </section>
 
 @code {
+
     List<RecipeModel.Root> recipesInCategory = new List<RecipeModel.Root>();
     RecipeCategoryModel.Root category { get; set; }
 
-    // Skapa en property för att kunna spara sluggen
+    // Slug property with a parameter attribute
     [Parameter]
     public string slug { get; set; }
 
@@ -57,6 +58,7 @@
         return recipes != null ? recipes : new List<RecipeModel.Root>();
     }
 
+    // Get a specific recipe category
     public async Task<RecipeCategoryModel.Root> GetCategory()
     {
         var category = await Http.GetFromJsonAsync<RecipeCategoryModel.Root>($"http://localhost:20990/api/category/{slug}");
@@ -66,6 +68,7 @@
     public bool shouldRender = false;
     protected override bool ShouldRender() => shouldRender;
 
+    // Run the code once the page loads
     protected override async Task OnInitializedAsync()
     {
         recipesInCategory = await GetAllRecipesInCategory();
@@ -73,6 +76,7 @@
         shouldRender = true;
     }
 
+    // Run the code once the slug parameter changes
     protected override async Task OnParametersSetAsync()
     {
         recipesInCategory = await GetAllRecipesInCategory();

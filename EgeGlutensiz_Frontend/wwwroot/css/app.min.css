@@ -870,6 +870,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(119 73 54 / var(--tw-bg-opacity));
 }
+.bg-\[\#E4D5C4\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 213 196 / var(--tw-bg-opacity));
+}
 .bg-\[\#d7c0a6\] {
   --tw-bg-opacity: 1;
   background-color: rgb(215 192 166 / var(--tw-bg-opacity));
@@ -1118,9 +1122,9 @@ body {
     height: 95vh;
 }
 
-/*a:focus-visible {
+a:focus-visible {
     outline: 3px dashed #000;
-}*/
+}
 
 .hover\:bg-\[\#A3644D\]:hover {
   --tw-bg-opacity: 1;

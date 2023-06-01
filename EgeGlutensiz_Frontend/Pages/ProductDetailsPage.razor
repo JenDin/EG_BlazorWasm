@@ -1,7 +1,6 @@
 ﻿@page "/ürünler/{slug}"
 
 @using EgeGlutensiz_Frontend.Models
-@*@inject NavigationManager navigationManager*@
 @inject HttpClient Http
 
 <PageTitle>Ege Glutensiz | @ChangeSlugApperance()</PageTitle>
@@ -163,7 +162,7 @@
 
 @code {
 
-    // Skapa en property för att kunna spara sluggen
+    // Slug property with a parameter attribute
     [Parameter]
     public string slug { get; set; }
 
@@ -171,6 +170,7 @@
 
     public string ImageUrl;
 
+    // Get the product details page
     public async Task<ProductPageModel.Root> GetPage()
     {
         var baseUrl = "http://localhost:20990/api/page";
@@ -181,30 +181,30 @@
         return productPage;
     }
 
-    // Texten ändrades inte för att det är en SPA 
+    // Run the code once the slug parameter changes
     protected override async Task OnParametersSetAsync()
     {
         productPageModel = await GetPage();
         ImageUrl = GetImgUrl();
-
     }
 
+    // Run the code once the page loads
     protected override async Task OnInitializedAsync()
     {
         productPageModel = await GetPage();
         ImageUrl = GetImgUrl();
     }
 
-    // Base URL
     string baseUrl = "http://localhost:20990/";
 
+    // Get the product image
     public string GetImgUrl()
     {
         var cleanUrl = productPageModel.productRegion.productImage.media.publicUrl.Replace("~", "");
         return $"{baseUrl}{cleanUrl}";
     }
 
-    // 
+    // Change the slug apperance for the bread crumb menu
     public string ChangeSlugApperance()
     {
         slug = slug.Replace("-", " ");

@@ -1,6 +1,6 @@
 ﻿@using EgeGlutensiz_Frontend.Models;
 
-<div class="test">
+<div>
     <article class="w-[240px] text-center mx-auto md:mx-0 mb-10">
         <a href="ürünler/@product.permalink" class="hover:opacity-75">
             <picture>
@@ -13,12 +13,14 @@
 </div>
 
 @code {
+
+    // Send the data to the product page
     [Parameter]
     public ProductPageModel.Root product { get; set; }
 
     string baseUrl = "http://localhost:20990";
 
-    // Clean the image URL
+    // Get the product image
     public string GetImgUrl()
     {
         var cleanUrl = product.productRegion.productImage.media.publicUrl.Replace("~", "");

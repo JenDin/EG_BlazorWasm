@@ -40,15 +40,16 @@
 
 @code {
 
-    // Store t of all recipe categories
+    // Recipe category list
     List<RecipeCategoryModel.Root> recipeCategories = new List<RecipeCategoryModel.Root>();
 
-    // Fetch the recipe categories
+    // Get all recipe categories
     public async Task<List<RecipeCategoryModel.Root>> GetRecipeCategories()
     {
         return await Http.GetFromJsonAsync<List<RecipeCategoryModel.Root>>("http://localhost:20990/api/category/all");
     }
 
+    // Run the code once the page loads
     protected override async Task OnInitializedAsync()
     {
         recipeCategories = await GetRecipeCategories();

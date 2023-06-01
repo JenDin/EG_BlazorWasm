@@ -1,5 +1,4 @@
 ﻿@using EgeGlutensiz_Frontend.Models
-@inject NavigationManager UriHelper
 
 <!-- Category card component -->
 <div class="max-w-[300px]">
@@ -22,17 +21,10 @@
 
     string baseUrl = "http://localhost:20990";
 
-    // Clean the image URL
+    // Get the category image
     public string GetImgUrl()
     {
         var cleanUrl = recipeCategory.recipeCategoryRegion.categoryImage.media.publicUrl.Replace("~", "");
         return $"{baseUrl}{cleanUrl}";
-    }
-
-
-    // Skicka sluggen (ta bort sen)
-    async Task GoToPage()
-    {
-        UriHelper.NavigateTo($"/{recipeCategory.permalink}");
     }
 }

@@ -23,13 +23,11 @@
 
 @code {
 
-    // Ta bort sen
-    [Parameter]
-    public RecipeCategoryModel.Root recipeCategory { get; set; }
-
+    // Send the data to the recipes in category page
     [Parameter]
     public RecipeModel.Root recipe { get; set; }
 
+    // Use the NavigationManager to create the dynamic URL
     public string GetUrl()
     {
         return recipe != null ?  $"{UriHelper.Uri}/{recipe.slug}" : "";
@@ -37,16 +35,10 @@
 
     string baseUrl = "http://localhost:20990/";
 
+    // Get the recipe in category image
     public string GetImgUrl()
     {
         var cleanUrl = recipe.recipeRegion.recipeImage.media.publicUrl.Replace("~", "");
         return $"{baseUrl}{cleanUrl}";
-    }
-
-    // Skicka sluggen till product details (ta bort sen)
-    async Task GoToPage(string slug)
-    {
-        UriHelper.NavigateTo($"/{slug}");
-
     }
 }

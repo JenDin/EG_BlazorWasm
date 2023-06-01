@@ -2,7 +2,6 @@
 @using EgeGlutensiz_Frontend.Models
 @page "/tarifler/{category}/{recipe}"
 @inject HttpClient Http
-@*@inject NavigationManager UriHelper;*@
 
 <PageTitle>Ege Glutensiz | @ChangeRecipeSlugApperance() </PageTitle>
 
@@ -37,7 +36,7 @@
 
 <section class="mt-16 mb-40">
     <!-- Image, title and details -->
-    <div class="bg-[#d7c0a6] lg:flex justify-center w-[90%] max-w-[800px] lg:max-w-[1200px] mx-auto rounded-tr-lg rounded-br-lg">
+    <div class="bg-[#E4D5C4] lg:flex justify-center w-[90%] max-w-[800px] lg:max-w-[1200px] mx-auto rounded-tr-lg rounded-br-lg rounded-tl-lg rounded-bl-lg">
         <div class="lg:w-1/2">
             <picture>
                 <source type="image/webp" srcset="@GetImgUrl()">
@@ -85,25 +84,29 @@
 
 @code {
 
+    // Run the code once the slug parameter changes
     protected override async Task OnParametersSetAsync()
     {
         recipeDetails = await GetRecipeDetails();
     }
 
+    // Run the code once the page loads
     protected override async Task OnInitializedAsync()
     {
         recipeDetails = await GetRecipeDetails();
     }
 
-
+    // Category slug property with a parameter attribute
     [Parameter]
     public string category { get; set; }
 
+    // Recipe slug property with a parameter attribute
     [Parameter]
     public string recipe { get; set; }
 
     RecipeDetails recipeDetails;
 
+    // Get the recipe details page
     public async Task<RecipeDetails> GetRecipeDetails()
     {
         return await Http.GetFromJsonAsync<RecipeDetails>($"http://localhost:20990/api/details/{recipe}");
@@ -111,12 +114,14 @@
 
     string baseUrl = "http://localhost:20990/";
 
+    // Get the recipe image
     public string GetImgUrl()
     {
         var cleanUrl = recipeDetails.recipeRegion.recipeImage.media.publicUrl.Replace("~", "");
         return $"{baseUrl}{cleanUrl}";
     }
 
+    // Change the slug apperance for the bread crumb menu
     public string ChangeSlugApperance()
     {
         var newCategory = category.Replace("-", " ");
@@ -129,6 +134,7 @@
         return newCategory;
     }
 
+    // Change the slug apperance for the browser window
     public string ChangeRecipeSlugApperance()
     {
         var newCategory = recipe.Replace("-", " ");

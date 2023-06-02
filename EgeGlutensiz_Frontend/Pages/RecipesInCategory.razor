@@ -65,15 +65,11 @@
         return category;
     }
 
-    public bool shouldRender = false;
-    protected override bool ShouldRender() => shouldRender;
-
     // Run the code once the page loads
     protected override async Task OnInitializedAsync()
     {
         recipesInCategory = await GetAllRecipesInCategory();
         category = await GetCategory();
-        shouldRender = true;
     }
 
     // Run the code once the slug parameter changes
@@ -81,8 +77,5 @@
     {
         recipesInCategory = await GetAllRecipesInCategory();
         category = await GetCategory();
-
-        shouldRender = true;
-
     }
 }
